@@ -17,6 +17,20 @@
 // Source: Series: "Algo-Zero" - Code Mely - Dev ơi mình đi đâu thế ?
 // Tìm ước chung lớn nhất (UCLN) & Bội chung nhỏ nhất bằng Vòng lặp 
 
+/*------Ý tưởng-----
+1/ Tìm UCLN
+B1: Tìm số nhỏ hơn giữa 2 số a và b
+B2: Duyệt vòng lặp với chỉ số i giảm dần từ min(a,b) tới 1 ( tính cả số 1 và min(a,b))
+B3: Nếu cả 2 số a, b đều chia hết cho i thì dừng vòng lặp, i chính là UCLN cần tìm
+2/ Tìm BCNN
+Sau khi đã có UCLN, có thể dùng công thức a*b=UCLN*BCNN
+*/
+
+/*------Pros and cons------
+Pros: Đơn giản, dễ tiếp cận đối với người mới. Dung lượng lưu trữ code nhỏ
+Cons: code dài dòng, Độ phức tạp của thuật toán chưa tối ưu O(min(a,b)) 
+*/
+
 #include <iostream>
 
 int GCD(int a, int b, int i){
