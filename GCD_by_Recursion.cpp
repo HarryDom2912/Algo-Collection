@@ -17,6 +17,13 @@
 // Source: Series: "Algo-Zero" - Code Mely - Dev ơi mình đi đâu thế ?
 // Tìm ước chung lớn nhất (UCLN) & Bội chung nhỏ nhất bằng Đệ quy
 
+/*-----Pros and cons------
+Pros: Đơn giản, dễ tiếp cận, code ngắn gọn, dung lượng lưu trữ code nhỏ.
+Cons: Có thể gây tràn bộ nhớ trong một số trường hợp đặt biệt.
+      Có thể khó hiểu và khó bảo trì hơn so với vòng lặp.
+      Độ phức tạp của thuật toán chưa tối ưu O(min(a,b)).
+*/
+
 #include <iostream>
 
 int GCD(int a, int b, int i){
