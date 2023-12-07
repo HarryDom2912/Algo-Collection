@@ -14,28 +14,18 @@
 /*  |___|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|___|  */
 /* (_____)                                                                           (_____) */
 
-// Source: Series: "Algo-Zero" - Code Mely - Dev ơi mình đi đâu thế ?
-// Tìm ước chung lớn nhất (UCLN) & Bội chung nhỏ nhất bằng giải thuật Eucild
-
-/*-----Ý tưởng-----
-Ý tưởng của giải thuật Euclide tính chất sau:
-UCLN của hai số nguyên a và b không thay đổi khi thay số lớn hơn bằng hiệu của nó với số nhỏ hơn.
-Sau khi đã có UCLN, hoàn toàn có thể tìm BCNN bằng cách sử dụng một công thức siêu tiện lợi đó là: a*b = UCLN*BCNN
+/*-----Nguyên lý hoạt động-----
+Hàm _gcd() sử dụng giải thuật Euclid để tìm UCLN của hai số nguyên tố a và b
 */
 
-/*-----Pros and Cons-----
-Pros: - Độ phức tạp của thuật toán thấp O(log(min(a,b)))
-      - Độ chính xác cao
-Cons: Khó hiểu hơn cách dùng vòng lặp và đệ quy
+/*-----Pros and cons-----
+Pros: - Dễ hiểu và dễ dàng sử dụng
+      - Độ phức tạp của giải thuật thấp O(log(min(a,b)))
+      - Dung lượng lưu trữ code nhỏ
+Cons: Có thể không được hỗ trợ bởi tất cả các trình biên dịch
 */
 
-#include <iostream>
-
-// Hàm đệ quy dùng giải thuật Euclid để tìm UCLN
-int GCD(int a, int b){
-    if(b==0) return a;
-    return GCD(b, a%b);
-}
+#include<bits/stdc++.h>
 
 int main(){
     int a, b;
@@ -44,8 +34,6 @@ int main(){
     std::cout << "b = ";
     std::cin >> b;
 
-    std::cout << "UCLN = " << GCD(a, b) << std::endl;
-    std::cout << "BCNN = " << a*b/GCD(a, b) << std::endl;
-
-    return 0; 
+    std::cout << "UCLN = " << std::__gcd(a,b) << std::endl;
+    std::cout << "BCNN = " << a*b/std::__gcd(a,b) << std::endl;
 }
